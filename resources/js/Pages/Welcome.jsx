@@ -1,21 +1,32 @@
 import { Link, Head } from "@inertiajs/react";
-import { useEffect } from "react";
+import { useState } from "react";
+// import './App.css'; // Assuming you have a CSS file for styles
 
 export default function Welcome() {
+    const [menuVisible, setMenuVisible] = useState(false);
+    const [animate, setAnimate] = useState(false);
+
+    const handleClick = (event) => {
+        if (event.target !== event.currentTarget) {
+            setAnimate(!animate);
+            setMenuVisible(!menuVisible);
+        }
+    };
+
     return (
         <>
             <Head title="Home Remedies" />
-            <div class="header_banner">
-                <div class="banner_top">
+            <div className="header_banner">
+                <div className="banner_top">
                     <img src="Images/banner.png" alt="banner" />
                 </div>
-                <div class="header_banner_wrapper">
-                    <header class="header">
-                        <div class="logo_nav">
-                            <div class="logo_image">
-                                <img src="Images\logo.png" alt="Logo Image" />
+                <div className="header_banner_wrapper">
+                    <header className="header">
+                        <div className="logo_nav">
+                            <div className="logo_image">
+                                <img src="Images/logo.png" alt="Logo Image" />
                             </div>
-                            <nav class="navigation">
+                            <nav className="navigation">
                                 <ul>
                                     <li>
                                         <a href="#">Features</a>
@@ -26,21 +37,21 @@ export default function Welcome() {
                                 </ul>
                             </nav>
                         </div>
-                        <div class="bars">
-                            <div class="bar1"></div>
-                            <div class="bar2"></div>
-                            <div class="bar3"></div>
+                        <div className={`bars ${animate ? 'animate' : ''}`} onClick={handleClick}>
+                            <div className="bar1"></div>
+                            <div className="bar2"></div>
+                            <div className="bar3"></div>
                         </div>
-                        <div class="btns">
-                            <button class="pri_btn">Login</button>
-                            <button class="sec_btn">Sign Up</button>
+                        <div className="btns">
+                            <button className="pri_btn">Login</button>
+                            <button className="sec_btn">Sign Up</button>
                         </div>
-                        <div class="mobile_menu">
-                            <div class="mb_btns">
-                                <button class="pri_btn">Login</button>
-                                <button class="sec_btn">Sign Up</button>
+                        <div className={`mobile_menu ${menuVisible ? 'show' : ''}`}>
+                            <div className="mb_btns">
+                                <button className="pri_btn">Login</button>
+                                <button className="sec_btn">Sign Up</button>
                             </div>
-                            <nav class="mb_navigation">
+                            <nav className="mb_navigation">
                                 <ul>
                                     <li>
                                         <a href="#">Features</a>
@@ -52,9 +63,9 @@ export default function Welcome() {
                             </nav>
                         </div>
                     </header>
-                    <section class="banner_section">
-                        <div class="left_section">
-                            <div class="left_top">
+                    <section className="banner_section">
+                        <div className="left_section">
+                            <div className="left_top">
                                 <h3>
                                     Healthy<span> living made easy!!</span>
                                 </h3>
@@ -63,28 +74,28 @@ export default function Welcome() {
                                     guidance from our experts
                                 </p>
                             </div>
-                            <div class="bottom">
-                                <button class="sign_in">Sign in</button>
+                            <div className="bottom">
+                                <button className="sign_in">Sign in</button>
                                 <p>
                                     <small>Sign in & get started today</small>
                                 </p>
                             </div>
                         </div>
-                        <div class="right_section">
-                            <img src="Images\pngwing.png" alt="banner_image" />
+                        <div className="right_section">
+                            <img src="Images/pngwing.png" alt="banner_image" />
                         </div>
                     </section>
                 </div>
-                <div class="banner_bg_image">
+                <div className="banner_bg_image">
                     <img src="Images/after.png" alt="Banner Background" />
                 </div>
             </div>
             <div>
-                <footer class="footer">
-                    <div class="footer_logo_img">
-                        <img src="Images\logo.png" alt="Logo Image" />
+                <footer className="footer">
+                    <div className="footer_logo_img">
+                        <img src="Images/logo.png" alt="Logo Image" />
                     </div>
-                    <div class="footer_nav">
+                    <div className="footer_nav">
                         <ul>
                             <li>
                                 <a href="#">Terms & conditions</a>
@@ -103,33 +114,27 @@ export default function Welcome() {
                             </li>
                         </ul>
                     </div>
-                    <div class="footer_divider">
-                        <img src="Images\Divider.png" alt="Logo Image" />
+                    <div className="footer_divider">
+                        <img src="Images/Divider.png" alt="Logo Image" />
                     </div>
-                    <div class="social_media">
+                    <div className="social_media">
                         <a href="#">
-                            <img
-                                src="Images\facebook.png"
-                                alt="Facebook Icon"
-                            />
+                            <img src="Images/facebook.png" alt="Facebook Icon" />
                         </a>
                         <a href="#">
-                            <img src="Images\insta.png" alt="Insta Icon" />
+                            <img src="Images/insta.png" alt="Insta Icon" />
                         </a>
                         <a href="#">
-                            <img src="Images\twitter.png" alt="Twitter Icon" />
+                            <img src="Images/twitter.png" alt="Twitter Icon" />
                         </a>
                         <a href="#">
-                            <img
-                                src="Images\pintrest.png"
-                                alt="Pintrest Icon"
-                            />
+                            <img src="Images/pintrest.png" alt="Pintrest Icon" />
                         </a>
                         <a href="#">
-                            <img src="Images\youtube.png" alt="Youtube Icon" />
+                            <img src="Images/youtube.png" alt="Youtube Icon" />
                         </a>
                         <a href="#">
-                            <img src="Images\message.png" alt="Message Icon" />
+                            <img src="Images/message.png" alt="Message Icon" />
                         </a>
                     </div>
                     <p>© 2023 Cornea clinic PVT. LTD. All Rights Reserved.</p>
