@@ -10,4 +10,8 @@ export default defineConfig({
         }),
         react(),
     ],
+    build: {
+        // Ensure assets are correctly copied to public directory
+        assetsDir: 'public',
+    },
 });

@@ -8,6 +8,18 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('Welcome');
 });
+Route::get('/terms', function () {
+    return Inertia::render('Frontend/termsconditions');
+});
+Route::get('/privacypolicies', function () {
+    return Inertia::render('Frontend/privacypolicy');
+});
+Route::get('/notification-privacypolicies', function () {
+    return Inertia::render('Frontend/notificationpolicies');
+});
+Route::get('/notification-conditions', function () {
+    return Inertia::render('Frontend/notificationterms');
+});
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
