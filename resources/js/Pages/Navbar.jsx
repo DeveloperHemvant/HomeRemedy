@@ -41,10 +41,7 @@ export default function Navbar() {
                     <button className="sec_btn">Sign Up</button>
                 </div>
                 <div className={`mobile_menu ${menuVisible ? "show" : ""}`}>
-                    <div className="mb_btns">
-                        <button className="pri_btn">Login</button>
-                        <button className="sec_btn">Sign Up</button>
-                    </div>
+                  
                     <nav className="mb_navigation">
                         <ul>
                             <li>
@@ -52,6 +49,12 @@ export default function Navbar() {
                             </li>
                             <li>
                                 <Link href="#">Blogs</Link>
+                            </li>
+                            <li>
+                                <Link href="#">Login</Link>
+                            </li>
+                            <li>
+                                <Link href="#">Sign Up</Link>
                             </li>
                         </ul>
                     </nav>
