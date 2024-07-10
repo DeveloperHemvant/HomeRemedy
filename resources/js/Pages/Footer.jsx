@@ -21,9 +21,9 @@ export default function Footer() {
                         <li>
                             <Link href="/notification-conditions">Notifications Terms & conditions</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link href="#">Support</Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
                 <div className="footer_divider">
